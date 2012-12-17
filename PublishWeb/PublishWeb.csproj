@@ -256,8 +256,9 @@
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <PropertyGroup>
-    <PostBuildEvent>echo OutputDir: "$(OutputDir)"
-IF NOT "$(OutputDir)"=="" xcopy "$(SolutionDir)Artifacts" "$(OutputDir)\_PublishedWebsites\PublishWeb\Tools\" /E /C /I /Y</PostBuildEvent>
+    <PostBuildEvent>echo OutputDir: "$(OutDir)"
+echo WebProjectOutputDir: "$(WebProjectOutputDir)"
+IF NOT "$(OutDir)"=="" xcopy "$(SolutionDir)Artifacts" "$(OutDir)\_PublishedWebsites\PublishWeb\Tools\" /E /C /I /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
