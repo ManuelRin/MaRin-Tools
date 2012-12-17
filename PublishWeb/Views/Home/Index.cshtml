@@ -1,4 +1,5 @@
-﻿@model dynamic
+﻿@using PublishWeb.Models
+@model PublishWeb.Models.ToolList
 
 @{
     ViewBag.Title = "MaRin Tools - Tools to make your life easier";
@@ -8,5 +9,20 @@
 <h2>MaRin Tools - Tools to make your life easier</h2>
 
 <p>This tools page is currently under construction. In the future, all my useful open source tools will be automatically published here.</p>
+
+<table>
+@foreach (ToolEntry item in Model.Tools)
+{
+       <tr>
+        <td><a href="@Url.Content("~/Tools/" + @item.Title + ".png")"><img alt="@item.Title" src="@Url.Content("~/Tools/" + @item.Title + "-thumb.png")"/></a></td>
+           <td>
+               <h2>@item.Title</h2>
+               <p>@item.Description</p>
+               <p>Latest code changes: @String.Format("{0:yyyy-MM-dd}", item.LastChanged)</p>
+               <p><a href="@Url.Content("~/Tools/" + @item.ArtifactLink)">Download @item.Title</a></p>
+           </td>
+    </tr>
+}
+</table>
 
 <p>Simply go to <a href="https://github.com/ManuelRin/MaRin-Tools" target="blank">my GitHub repository</a> to browse, get or contribute to the source code.</p>
