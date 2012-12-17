@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tools>
+	<Tool>
+		<Title>UnicodeText</Title>
+		<Description>Allows to paste text to analyse Unicode Characters one-by-one and display character information in several representations (decimal, hexadecimal, HTMl, XML) as well as the verbose description of the character's name.</Description>
+		<LastChanged>2012-12-17</LastChanged>
+		<ArtifactLink>UnicodeText.exe</ArtifactLink>
+	</Tool>
+</Tools>
